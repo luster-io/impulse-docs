@@ -2,6 +2,7 @@ $buffer = 20px;
 $radius = 4px;
 $primaryColor = #FF2A68; /* #e53c6c; */
 $secondaryColor = #0da0cc;
+$warningColor = #FF2D55;
 /* #e53c6c #E8518B */
 
 * {
@@ -15,6 +16,45 @@ body {
   line-height: 30px;
   color: #333;
   margin: 0;
+}
+
+.warning {
+  padding: 20px;
+  border: 1px solid #ededed;
+  border-left: 5px solid $warningColor;
+  border-radius: 3px;
+
+  p {
+    padding-bottom: 0;
+  }
+
+  h3 {
+    color: $warningColor;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.notice {
+  padding: 20px;
+  border: 1px solid #ededed;
+  border-left: 5px solid $secondaryColor;
+  border-radius: 3px;
+
+  p {
+    padding-bottom: 0;
+  }
+
+
+  h3 {
+    color: $secondaryColor;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.example {
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -88,6 +128,21 @@ code, pre {
   margin: 0 auto;
 }
 
+.button-group {
+  margin: 20px 0;
+  width: 100%;
+}
+
+a.button {
+  border: 2px solid $primaryColor;
+  border-radius: 8px;
+  padding: 10px 15px 10px 15px;
+  font-size: 20px;
+  font-weight: 400;
+  color: $primaryColor;
+  margin: 0 20px 0 0;
+}
+
 nav {
   z-index: 10;
   position: fixed;
@@ -116,14 +171,32 @@ nav {
 }
 
 .list {
+  padding: 0 20px;
   position: absolute;
   width: 50%;
 }
 
 .preview {
-  position: absolute;
+  border: 0;
+  background-image: url(http://adriandelbalso.com/images/iphone_frame.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:#f0f0f0;
+  position: fixed;
   right: 0;
   top: 70px;
-  bottom: 0px;
+  bottom: 0;
   width: 50%;
+  text-align:center;
+
+  .item {
+    background-color: #999;
+    width: 276px;
+    height: 416px;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+  }
 }

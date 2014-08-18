@@ -1,5 +1,5 @@
-  Luster Physics is a library for building dynamic physics based interactions,
-specifically for mobile.
+  Impulse is a library for building dynamic physics based interactions,
+with a focus on mobile web.
 
 How is this different from jquery animate, velocity.js, etc?
 ---------------------------------------------------------
@@ -8,22 +8,19 @@ How is this different from jquery animate, velocity.js, etc?
 period of time.  If you want non-linear movement you pass in an easing
 function, which modifies the original path in the same way every time.
 
-  Luster Physics takes a different approach.  Instead of a start, end, and
-duration, LP instead takes a start, end, and velocity.  This small change
-produces a vastly difference experience.
+  Impulse takes a different approach.  Instead of a duration, Impulse instead
+takes an initial velocity, and simulates the animation based on that.  This
+small change produces a difference experiences.  Instead of static animations
+that feel awkward and stiff, Impulse animations feel smooth and fluid.
 
-  Animations can now flow smoothly from user interactions.  When a user swipes
-a page, it moves at the velocity they flicked it at.  When they scroll, the
-page moves at their velocity, slowly coming to rest.
+  Animations flow smoothly from user interactions.  When a user swipes an
+element, moves at the velocity of their swipe.
 
 How is this different from famo.us?
 -----------------------------------
 
   Famo.us is a huge framework that tries to do everything for you. It tries to
-do away with the browser's layout engine, in favor of converting
-everything into a hardware accelerated render layer and controlling
-everything itself.
-
-  Luster Physics is a small library that provides physics based animations and
-nothing else.  It works with web standards, instead of trying to reinvent the
-browser's layout engine.
+do away with the browser's layout engine, in favor of converting everything
+into a hardware accelerated render layer and controlling everything itself.
+Impulse is a much small library that provides physics based animations and
+interactions.

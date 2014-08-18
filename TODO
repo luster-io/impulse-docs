@@ -4,23 +4,28 @@
   [X]Header
   [X]API typography
 [X]Create example list page.  With notes and descriptions.
-[ ]Get each example running and hosted on gh-pages.
-  [ ]Chat Heads
-  [ ]Pull Down
-  [ ]Oridomi
-[ ]Landing Page.
+[X]Get each example running and designed.
+  [X]Chat Heads
+  [X]Pull Down
+  [X]Bounce Scroll
+  [X]Simulated Scroll
+  [X]Oridomi
+[ ]Get examples on gh-pages.
+[ ]Write scroll tutorial.
 [ ]Styles and typography for tutorial.
 [ ]Get tutorial and docs on gh-pages.
-[ ]Add chat box to chat-head example.
-[ ]Write scroll tutorial.
-[ ]Style pulldown menu.
-[ ]Style oridomi menu.
+[ ]Write getting started
+[ ]Landing Page.
 [ ]Edit documentation.
-[ ]Link up the api headers.
-[ ]Logo.
-[ ]Logo animation.
+[ ]Link up the api headers and links.
+[ ]Api active state
+[ ]RawGIT CDN
+[ ]Try clean installing with bower, browserify, and script tag
 [ ]Make list of people to email.
 [ ]Email those people.
 
+[ ]Logo.
+[ ]Logo animation.
+[ ]Add chat box to chat-head example.
 [ ]Luster page.
 [ ]D3 Example
