@@ -1,6 +1,8 @@
 $buffer = 20px;
 $radius = 4px;
-$primaryColor = #E8518B;
+$primaryColor = #FF2A68; /* #e53c6c; */
+$secondaryColor = #0da0cc;
+/* #e53c6c #E8518B */
 
 * {
   box-sizing: border-box;
@@ -19,7 +21,7 @@ h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
-  color: #FF2A68;
+  color: $primaryColor;
 }
 
 a:link, a:visited {
@@ -27,8 +29,8 @@ a:link, a:visited {
   color: #333;
 }
 
-a:hover {
-  color: #FF2A68;
+a[href]:hover {
+  color: $primaryColor;
 }
 
 .logo {
@@ -40,6 +42,7 @@ a:hover {
   top: 0;
   left: 40px;
   line-height: 76px;
+
   a:link, a:visited {
     text-decoration: none;
     color: #333;
@@ -79,6 +82,7 @@ code, pre {
 }
 
 .container {
+  position: relative;
   padding-top: 80px;
   max-width: 960px;
   margin: 0 auto;
@@ -95,7 +99,7 @@ nav {
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, .1);
 
   a:link, a:visited {
-    color: #FF2A68;
+    color: $primaryColor;
   }
 
   .links {
@@ -109,4 +113,17 @@ nav {
     }
   }
 
+}
+
+.list {
+  position: absolute;
+  width: 50%;
+}
+
+.preview {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  bottom: 0px;
+  width: 50%;
 }

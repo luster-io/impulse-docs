@@ -1,0 +1,73 @@
+.list
+  h1 Examples
+
+  :markdown
+
+    Here's a list of example's built with Impulse.  If you've built something
+    awesome, and want to share, let us know!
+
+  .chat-heads
+    h2 Chat Heads
+
+    :markdown
+
+      A "chat heads" chat overlay, much like facebook's. This demo uses the
+      `interaction`, `spring`, and `attachSpring` methods.
+
+      There is a main chat head, which you drag around, and then each
+      additional head is attached to the next, kindof like a linked list!
+
+      [Github](https://github.com/luster-io/demo-chat-heads)
+      <a href="#view" class="chat-heads-view">Try It</a>
+
+  .pulldownMenu
+    h2 pulldownMenu
+
+    :markdown
+
+      A pull down menu, with a feel like the notifications menu in ios 7.
+      accelerate down and bounce as if affected by gravity when opening, and
+      spring closed.
+
+
+  .oridomi
+    h2 Oridomi Map
+
+    :markdown
+
+      This example uses the awesome
+      [oridomi](https://github.com/dmotz/oriDomi) library as a custom
+      renderer.
+
+      Normally oridomi elements don't animate open and closed on swipe.
+      We used impulse to add throwing the map open and closed.
+
+      [Github](https://github.com/luster-io/demo-chat-heads)
+      <a href="#view" class="chat-heads-view">Try It</a>
+
+  .simulatedScrolling
+    h2 Simulated Scroll
+
+    :markdown
+
+      Simulated scrolling with inertia, deceleration, overscroll
+      and bounce, in about 30 lines.
+
+      WARNING:  Unless your situation is extreme, you should probably not use
+      simulated scrolling in a real app, since there are A TON of optimizations
+      that modern mobile browsers do to give you the silkiest, smoothest,
+      possible experience.
+
+  .bounceScroll
+    h2 Bouncy Scrolling
+
+    :markdown
+
+    Taking the previous example to the extreme, we added bouncy scrolling,
+    similar to Ios 7 Messages App bouncy scroll.  This example may be slower
+    on older devices, due to the number of compositor RenderLayers (each
+    message), as well as the number of springs that need to be simulated.
+
+    This demo is also using an experimental optimization branch of impulse.
+
+.preview

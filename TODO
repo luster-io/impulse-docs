@@ -1,20 +1,26 @@
 [X]Convert API to html.
-[ ]Get styles and typography correct.
-  [ ]Client side code highlighter
-  [ ]Header
-  [ ]Page Banner
-  [ ]API typography
-[ ]Create example list page.  With notes and descriptions.
+[X]Get styles and typography correct.
+  [X]Client side code highlighter
+  [X]Header
+  [X]API typography
+[X]Create example list page.  With notes and descriptions.
 [ ]Get each example running and hosted on gh-pages.
-[ ]Logo.
+  [ ]Chat Heads
+  [ ]Pull Down
+  [ ]Oridomi
 [ ]Landing Page.
 [ ]Styles and typography for tutorial.
 [ ]Get tutorial and docs on gh-pages.
-[ ]Make list of people to email.
-[ ]Email those people.
 [ ]Add chat box to chat-head example.
 [ ]Write scroll tutorial.
 [ ]Style pulldown menu.
 [ ]Style oridomi menu.
-[ ]Luster page.
 [ ]Edit documentation.
+[ ]Link up the api headers.
+[ ]Logo.
+[ ]Logo animation.
+[ ]Make list of people to email.
+[ ]Email those people.
+
+[ ]Luster page.
+[ ]D3 Example
