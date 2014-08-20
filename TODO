@@ -22,13 +22,12 @@
 [ ]Get tutorial and docs on gh-pages.
 [ ]Oridomi overflow hidden.
 [ ]Make pages responsive.
-[ ]Try clean installing with bower, browserify, and script tag (raw git).
-[ ]RawGIT CDN
+[X]Try clean installing with bower, browserify, and script tag (raw git).
+[X]RawGIT CDN
 [ ]Make list of people to email.
 [ ]Email those people.
 [ ]Spring Tester
 [ ]Write scroll tutorial.
-
 [ ]Logo.
 [ ]Logo animation.
 [ ]Add chat box to chat-head example.
