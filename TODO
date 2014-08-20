@@ -10,19 +10,22 @@
   [X]Bounce Scroll
   [X]Simulated Scroll
   [X]Oridomi
-[ ]Get examples on gh-pages.
-[ ]Write scroll tutorial.
+[X]Get examples on gh-pages.
+   [X]Chat Heads
+   [X]Oridomi
+   [X]Pull Down
+   [X]Scroll
+   [X]Bounce Scroll
+[ ]Try buttons on examples page.
 [ ]Styles and typography for tutorial.
+[ ]Put together "guides" page.
 [ ]Get tutorial and docs on gh-pages.
-[ ]Write getting started
-[ ]Landing Page.
-[ ]Edit documentation.
-[ ]Link up the api headers and links.
-[ ]Api active state
-[ ]RawGIT CDN
-[ ]Try clean installing with bower, browserify, and script tag
+[ ]Try clean installing with bower, browserify, and script tag.
+[ ]Make pages responsive.
 [ ]Make list of people to email.
 [ ]Email those people.
+[ ]RawGIT CDN
+[ ]Write scroll tutorial.
 
 [ ]Logo.
 [ ]Logo animation.
