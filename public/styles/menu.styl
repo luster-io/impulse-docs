@@ -1,0 +1,122 @@
+$screen-md-min = 970px;
+$primaryColor = #FF2A68;
+
+
+nav {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: white;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, .1);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+
+  a:link, a:visited {
+    color: $primaryColor;
+  }
+  .links {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+
+    a {
+      margin-left: 40px;
+      padding: 10px 20px;
+    }
+  }
+}
+
+.menu-handle {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 35px;
+  height: 20px;
+  z-index:4;
+}
+
+.menu-handle span, .menu-handle span:before, .menu-handle span:after {
+  position: absolute;
+  border-radius: 3px;
+  height: 4px;
+  width: 35px;
+  background: $primaryColor;
+  position: absolute;
+  display: block;
+  content: '';
+  z-index:3;
+}
+
+.menu-handle span:before {
+  top: 9px;
+}
+
+.menu-handle span:after {
+  top: 18px;
+}
+
+.pull-down-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  padding-top: 71px;
+  z-index: 4;
+  background-color: #fafafa;
+
+  a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #ededed;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:link, &:visited {
+      color: $primaryColor;
+    }
+  }
+
+
+  .close-handle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-color: #fafafa;
+  }
+
+  .arrow-left, .arrow-right {
+    background-color: #ccc;
+    height: 8px;
+    width: 24px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transition: transform .2s;
+  }
+
+  .arrow-left {
+    transform: translate3d(-8px, 0, 0) rotate(0deg);
+  }
+
+  .arrow-right {
+    transform: translateX3d(8px, 0, 0) rotate(0deg);
+  }
+
+  .open .arrow-left {
+    transform: translate3d(-8px, 0, 0) rotate(-10deg);
+  }
+
+  .open .arrow-right {
+    transform: translate3d(8px, 0, 0) rotate(10deg);
+  }
+
+}

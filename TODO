@@ -18,15 +18,17 @@
    [X]Bounce Scroll
 [X]Try buttons on examples page.
 [X]Styles and typography for tutorial.
-[ ]Put together "guides" page.
-[ ]Get tutorial and docs on gh-pages.
-[ ]Oridomi overflow hidden.
-[ ]Make pages responsive.
+[X]Get tutorial and docs on gh-pages.
+[X]Make pages responsive.
 [X]Try clean installing with bower, browserify, and script tag (raw git).
 [X]RawGIT CDN
+[ ]Put together "guides" page.
+[ ]Link all the sidebars correctly.
+[ ]Landing page.
 [ ]Make list of people to email.
 [ ]Email those people.
-[ ]Spring Tester
+[ ]Highlight current link.
+[ ]Oridomi overflow hidden.
 [ ]Write scroll tutorial.
 [ ]Logo.
 [ ]Logo animation.

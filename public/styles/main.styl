@@ -1,4 +1,5 @@
 @import "bootstrap.css"
+@import "menu.styl"
 
 $buffer = 20px;
 $radius = 4px;
@@ -92,12 +93,7 @@ a[href]:hover {
 }
 
 .toc {
-  width: 25%;
-  position: relative;
-  min-height: 1px;
-  padding: 40px 20px 0 20px;
-  float: left;
-
+  padding-top: 40px;
   ul {
     margin: 5px 0 20px 0;
     padding: 0;
@@ -115,18 +111,11 @@ code, pre {
   font-size: 16px;
 }
 
-.contents {
-  width: 75%;
-  position: relative;
-  min-height: 1px;
-  padding: 0 20px;
-  float: left;
-}
-
 .container {
+  width: 100%;
   position: relative;
-  padding-top: 80px;
   max-width: 960px;
+  padding-top: 80px;
   margin: 0 auto;
 }
 
@@ -145,42 +134,8 @@ a.button {
   margin: 0 20px 0 0;
 }
 
-nav {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background: white;
-  box-shadow: 0 0 3px 2px rgba(0, 0, 0, .1);
-
-  a:link, a:visited {
-    color: $primaryColor;
-  }
-
-  .links {
-    position: absolute;
-    right: 40px;
-    top: $buffer;
-
-    a {
-      margin-left: 40px;
-      padding: 10px 20px;
-    }
-  }
-
-}
-
-.list {
-  padding: 0 20px;
-  position: absolute;
-  width: 50%;
-}
-
 .preview {
-  border: 0;
-  background-image: url(http://adriandelbalso.com/images/iphone_frame.png);
+  background-image: url(images/iphone_frame.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-color:#f0f0f0;
@@ -188,7 +143,6 @@ nav {
   right: 0;
   top: 70px;
   bottom: 0;
-  width: 50%;
   text-align:center;
 
   .item {

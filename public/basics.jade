@@ -1,0 +1,172 @@
+.toc.col-sm-3!=partial('./_guide-nav')
+
+.contents.col-sm-9
+  :markdown
+
+    #Basics
+
+    For these basic tutorials we'll have one impulse object, in this case
+    a ball.  Our markup for the ball will be single div, and we'll style it
+    so that it's round, like a ball.
+
+    ```markup
+      <div class="ball"></div>
+    ```
+
+    ```css
+      .ball {
+        background-color: #0da0cc;
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+      }
+    ```
+
+    The first thing to do it to create an impulse object for our ball,
+    and tell it to update the css transform `translate` when the ball moves.
+
+    ```javascript
+    var ball = Impulse($('.ball'))
+      .style('translate', function(x, y) {
+        return x + 'px, ' + y + 'px'
+      })
+    ```
+
+    Now that we've got the ball, lets make it move!
+
+    ##Springing
+
+    To start, let's just try to get a ball to spring from one place to
+    another.
+
+    ```javascript
+    ball.spring({ tension: 100, damping: 10 })
+      .from(0, 0).to(100, 100).start()
+    ```
+
+    This tells the ball to spring from (x: 0, y: 0) to (x: 100, y: 100).
+    Pretty simple.  The `tension` and `damping` options alter the feel of the
+    spring.  The higher the `tension` the faster the spring moves.  The higher
+    the `damping` the faster the ball comes to a stop.
+
+    If you want to get a feel for how those options work try the codepen
+    below!
+
+  != partial('./_codepen', { title: 'Simple Spring', slug: 'tcbJf' })
+
+  .warning.hidden-xs.hidden-sm
+    h3 WARNING: Exploding Springs
+    :markdown
+
+      If you set the `tension` option too high, it can cause the spring to
+      `explode` off the screen.  Luckily, tension values high enough to cause
+      the spring to explode would be impractical for an animation.
+
+  :markdown
+    ##Accelerating
+
+    Now lets try some simulated gravity!
+
+
+
+    This will drop our ball from (x: 0, y: 0) to (x: 100, y: 100). There's a
+    lot of options here, so lets go through them one by one.
+
+      * `acceleration` is how fast the ball accelerates in pixels per second.
+
+      * `bounce` is a boolean which determines if the object will bounce when
+      it gets to it's destination.
+
+      * `damping` determines how much velocity the ball loses on each bounce.
+      e.g. with .4 damping, if the ball is moving at 1000 pixels per second
+      when it bounces, it will rebound at 400 pixels per second.
+
+      * `minBounceDistance` is the minimum height cutoff for a bounce.  This is useful
+      so you can prevent the ball from making a ton of really small bounces.
+
+  != partial('./_codepen', { title: 'Simple Acceleration', slug: 'hvtEH' })
+
+  :markdown
+    ##Decelerating
+
+      Now let's make the ball start out fast and gently come to a stop.
+
+    ```javascript
+    ball.decelerate({ deceleration: 500 })
+      .velocity(300, 300)
+      .from(0, 0)
+      .to(1000, 1000).start()
+    ```
+
+    This will start our ball moving from (x: 0, y: 0) to (x: 1000, y: 1000).
+    The `deceleration` option tells the ball to slow down at 500 pixels per
+    second.
+
+    When you run the code pen, you'll notice that the ball doesn't actually
+    reach the destination.  That's because it slowed to a stop before reaching
+    it.  Keep that in mind when using deceleration.
+
+  != partial('./_codepen', { title: 'Simple Acceleration', slug: 'hvtEH' })
+
+  :markdown
+    ##Chaining
+
+    What if we want to do two animations in a row?  That's super easy, because
+    every animation returns a promise that resolves when it's done. So let's
+    build an animation that accelerates down, but once it reaches the bottom,
+    it springs.
+
+    ```javascript
+    ball.accelerate({ acceleration: 1000 })
+      .velocity(0, 0)
+      .from(0, 0)
+      .to(0, 100).start()
+      .then(
+        ball.spring({ tension: 100, damping: 5 }).start
+      )
+    ```
+
+    Like an icecube dropped into water! The reason this works is that the ball
+    keeps track of it's velocity, so once it finishes accelerating, the
+    velocity and position are set for the next animation.  And since the `to`
+    and `from` positions both default to the current position of the object,
+    everything just works.
+
+
+  .notice
+    h3 Important
+
+    :markdown
+      Notice that we don't call start when we pass it into `then`.  Impulse will
+      do that when the acceleration finishes.
+
+
+  != partial('./_codepen', { title: 'Simple Acceleration', slug: 'akdFl' })
+
+  :markdown
+    ##Animating Other Properties
+
+      In the previous example we only animated the `translate` property.
+    But we can actually animate any css property.  Lets try animating the
+    scale of our ball this time.
+
+    ```javascript
+    var ball = Impulse($('.ball'))
+      .style('scale', function(s) { return s })
+    ```
+
+    This time when we setup our ball, instead of updating the translate property,
+    we'll update the scale.
+
+    ```javascript
+      ball.spring({ tension: 200, damping: 10 })
+      .from(.6)
+      .to(1).start()
+
+    ```
+
+    When we spring, we'll spring from 0.6 to 1, because scale takes in value
+    from 0 to 1.  That's all there is to it, you now have a nice bounce-in
+    effect.
+
+  != partial('./_codepen', { title: 'Simple Acceleration', slug: 'jFJpC' })
