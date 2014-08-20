@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="styles/prism.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,300,400,700" type="text/css"></head><body><nav><div class="logo"><a href="/">Impulse</a></div><div class="links"><a href="guides.html">Guides</a><a href="api.html">API</a><a href="examples.html">Examples</a><a href="https://github.com/luster-io/impulse">Github</a></div></nav><div class="container"><div class="toc"><h4>Getting Started</h4><ul><li><a href="/guides.html">Overview</a></li><li><a href="/installation.html">Installation</a></li></ul><h4>Tutorials</h4><ul><li><a href="/pull-down-menu.html">Pulldown Menu</a></li></ul></div><div class="contents"><div id="menu-tutorial"><h1>Pull Down Menu</h1>
+<p>  One of the easiest things to build with luster physics is a pull down menu.
+We&#39;ll build a pulldown menu that accelerates as if it were being pulled down
+by gravity and bounces when it hits the bottom. When it&#39;s closing it will
+act as if it&#39;s being pulled up by a spring.</p>
+<p>  Let&#39;s start by creating some markup for our menu.</p>
+<pre><code class="language-markup">&lt;body&gt;
+  &lt;div class=&quot;nav-header&quot;&gt;
+    &lt;div class=&quot;hamburger-menu-handle&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;pull-down-menu&quot;&gt;
+    &lt;div class=&quot;close-handle&quot;&gt;close&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>  We have the menu itself <code>.pull-down-menu</code>, and then we have a top nav bar
+<code>.nav-header</code> with a hamburger menu icon <code>.hamburger-menu-handle</code> (three
+bars), which when clicked or dragged, will open and close the menu.</p>
+<p>  Add some basic css.  To keep this post reasonable I&#39;m not going to explain
+everything about the css.  The important thing is that it creates a menu that
+is the full height and width of the viewport, and shifts it off screen, above
+the viewport.</p>
+<p>  We&#39;ll start off by creating a physics object for the menu, since the menu is
+going to be vertical, we only need to add css to animate on the y axis.</p>
+<pre><code class="language-javascript">  var menu = new Physics(menuEl)
+    .style(&#39;translateY&#39;, function(position) { return position.y + &#39;px&#39; })</code></pre>
+<p>  What this does is, as the position of the menu changes, (being dragged,
+accelerated, or sprung), we update the css <code>transform: translateY</code> property, to the
+current y position.</p>
+<p>  Next we&#39;ll create a boundry for where we want the menu to be dragged.
+Esentially we&#39;re preventing the menu from being pulled past the bottom of
+the screen.</p>
+<pre><code class="language-javascript">  var boundry = Physics.Boundry({ top: 0, bottom: window.innerHeight })</code></pre>
+<p>  Now, to build to the actual interaction, we start off by making the menu
+draggable within our boundry.  We specify <code>handles</code>, which are the elements
+that we interact with to drag the menu.  In this case, that&#39;s the hamburger
+menu, and the <code>close</code> bar on the bottom.</p>
+<pre><code class="language-javascript">var drag = menu.drag({ handle: handleEls, boundry: boundry })</code></pre>
+<p>  In the background, Luster Physics takes the user input and uses it to move
+the menu and calculate the velocity of the user&#39;s movements.</p>
+<p>  If you run this code right now, you can pull the menu open by dragging
+the hambuger menu, but once you let go it just sticks.  The next step is
+to create an animation that flows from the user&#39;s movement.</p>
+<p>  The next step is to animate the menu, once the user has stopped dragging.</p>
+<pre><code class="language-javascript">function end() {
+  if(drag.moved()) {
+    isOpen = menu.direction(&#39;down&#39;)
+  } else {
+    isOpen = !isOpen
+  }
+
+  if(isOpen) {
+    menu.accelerate({ acceleration: 1500, bounceAcceleration: 4000, bounce: true })
+      .to(0, boundry.bottom).start()
+  } else {
+    menu.spring({ tension: 100, damping: 15 })
+      .to(0, boundry.top).start()
+  }
+}
+
+drag.on(&#39;end&#39;, end)</code></pre>
+<p>  The end function we&#39;ve defined here check&#39;s if the user actually moved while
+dragging.  If they moved the menu, we determine whether to open or close the
+menu based on whether the menu&#39;s is currently moving up or down.  If they
+didn&#39;t move at all(essentially a tap), we just toggle the open state of the
+menu.</p>
+<p>  Once we know if the menu is opening or closing, we either accelerate to the
+bottom, or spring to the top.</p>
+<p>  Most of the options (tension, damping, acceleration, etc) are values that I
+found by playing around with the numbers until I found something that felt
+good.  It&#39;s important that you do that yourself, so that the feel of your
+interactions fit with your app.</p>
+<p>  So now we should have working pull down menu with a nice bounce.</p>
+<p>You can access the <a href="https://github.com/luster-io/demo-pull-down-menu/blob/master/app/scripts/app.js">full code here</a>.</p>
+</div></div></div><script src="scripts/prism.js"></script></body></html>
