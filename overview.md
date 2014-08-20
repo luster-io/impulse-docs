@@ -11,11 +11,11 @@ function, which modifies the original path in the same way every time.
 
   Impulse takes a different approach.  Instead of a duration, Impulse instead
 takes an initial velocity, and simulates the animation based on that.  This
-small change produces a difference experiences.  Instead of static animations
+small change produces a different experience.  Instead of static animations
 that feel awkward and stiff, Impulse animations feel smooth and fluid.
 
   Animations flow smoothly from user interactions.  When a user swipes an
-element, moves at the velocity of their swipe.
+element, it moves at the velocity of their swipe.
 
 How is this different from famo.us?
 -----------------------------------

@@ -22,11 +22,11 @@
 [X]Make pages responsive.
 [X]Try clean installing with bower, browserify, and script tag (raw git).
 [X]RawGIT CDN
-[ ]Put together "guides" page.
+[X]Put together "guides" page.
 [ ]Link all the sidebars correctly.
 [ ]Landing page.
-[ ]Make list of people to email.
-[ ]Email those people.
+[X]Email people.
+[ ]Can't tap chatheads on mobile.
 [ ]Highlight current link.
 [ ]Oridomi overflow hidden.
 [ ]Write scroll tutorial.
