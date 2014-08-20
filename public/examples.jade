@@ -7,7 +7,6 @@
       You can use your mouse, but these demo's are much
       cooler on your phone or tablet!
 
-
   .example.chat-heads
     h2 Chat Heads
 
@@ -21,7 +20,7 @@
 
     .button-group
       a.button(href="https://github.com/luster-io/demo-chat-heads") Github
-      a.button(href="#try") Try It
+      a.button(href="http://luster-io.github.io/demo-chat-heads" target="preview-frame") Try It
 
   .example.pulldown-menu
     h2 pulldownMenu
@@ -31,6 +30,11 @@
       A pull down menu, with a feel like the ios 7 notifications pulldown-menu.
       Accelerates down and bounces as if pulled by gravity, and
       springs closed.
+
+    .button-group
+      a.button(href="https://github.com/luster-io/demo-pull-down-menu") Github
+      a.button(href="http://luster-io.github.io/demo-pull-down-menu" target="preview-frame") Try It
+
 
   .example.simulated-scrolling
     h2 Simulated Scroll
@@ -47,6 +51,28 @@
       Simulated scrolling with inertia, deceleration, overscroll
       and bounce, in about 30 lines.
 
+    .button-group
+      a.button(href="https://github.com/luster-io/simulated-scrolling") Github
+      a.button(href="http://luster-io.github.io/simulated-scrolling" target="preview-frame") Try It
+
+  .example.oridomi
+    h2 Oridomi Cover
+
+    :markdown
+
+      This example uses the awesome
+      [oridomi](https://github.com/dmotz/oriDomi) library as a custom
+      renderer.
+
+      Normally oridomi elements don't animate open and closed on swipe.
+      We used impulse to add the ability to open and close the "cover"
+      with just a few lines in Impulse.
+
+    .button-group
+      a.button(href="https://github.com/luster-io/demo-oridomi-renderer") Github
+      a.button(href="http://luster-io.github.io/demo-oridomi-renderer" target="preview-frame") Try It
+
+
   .example.bounce-scroll
     h2 Bouncy Scrolling
 
@@ -62,23 +88,14 @@
       on older devices, due to the number of compositor RenderLayers (each
       message), as well as the number of springs that need to be simulated.
 
+    .button-group
+      a.button(href="https://github.com/luster-io/demo-bounce-scroll") Github
+      a.button(href="http://luster-io.github.io/demo-bounce-scroll" target="preview-frame") Try It
+
   :markdown
     Built something awesome and want to share? Let us know and we can include
     it on this page!
 
-  .example.oridomi
-    h2 Oridomi Map
-
-    :markdown
-
-      This example uses the awesome
-      [oridomi](https://github.com/dmotz/oriDomi) library as a custom
-      renderer.
-
-      Normally oridomi elements don't animate open and closed on swipe.
-      We used impulse to add throwing the map open and closed.
-
-      <a href="#" class="button">Coming Soon</a>
 
 .preview
-  iframe.item(src="https://27f657c7.ngrok.com")
+  iframe.item(name="preview-frame")
