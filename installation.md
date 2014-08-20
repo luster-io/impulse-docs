@@ -19,7 +19,7 @@ Component support coming soon!
 ##Raw Git
 
 ```html
-  <script src="rawgiturl"></script>
+<script src="http://cdn.rawgit.com/luster-io/impulse/master/impulse.js"></script>
 ```
 
 ##Manually
@@ -27,7 +27,7 @@ Component support coming soon!
 Get `build/impulse.js` or `build/impulse.min.js` from github.
 
 ```html
-  <script src="/scripts/impulse.js"></script>
+<script src="/scripts/impulse.js"></script>
 ```
 
 Exposes a global `Impulse`
