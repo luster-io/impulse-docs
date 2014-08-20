@@ -1,5 +1,6 @@
-title: Pull Down Menu
----
+Pull Down Menu
+==============
+
   One of the easiest things to build with luster physics is a pull down menu.
 We'll build a pulldown menu that accelerates as if it were being pulled down
 by gravity and bounces when it hits the bottom. When it's closing it will
@@ -7,7 +8,7 @@ act as if it's being pulled up by a spring.
 
   Let's start by creating some markup for our menu.
 
-```html
+```markup
 <body>
   <div class="nav-header">
     <div class="hamburger-menu-handle"></div>
@@ -101,4 +102,4 @@ interactions fit with your app.
 
   So now we should have working pull down menu with a nice bounce.
 
-  You can access the full code here.
+You can access the [full code here](https://github.com/luster-io/demo-pull-down-menu/blob/master/app/scripts/app.js).

@@ -16,15 +16,17 @@
    [X]Pull Down
    [X]Scroll
    [X]Bounce Scroll
-[ ]Try buttons on examples page.
-[ ]Styles and typography for tutorial.
+[X]Try buttons on examples page.
+[X]Styles and typography for tutorial.
 [ ]Put together "guides" page.
 [ ]Get tutorial and docs on gh-pages.
-[ ]Try clean installing with bower, browserify, and script tag.
+[ ]Oridomi overflow hidden.
 [ ]Make pages responsive.
+[ ]Try clean installing with bower, browserify, and script tag (raw git).
+[ ]RawGIT CDN
 [ ]Make list of people to email.
 [ ]Email those people.
-[ ]RawGIT CDN
+[ ]Spring Tester
 [ ]Write scroll tutorial.
 
 [ ]Logo.
