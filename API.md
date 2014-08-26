@@ -8,6 +8,9 @@ var menu = Impulse($('.myMenu'))
 var scroller = Impulse(document.getElementById('.myScroller'))
 ```
 
+NOTE: Now `menu` and `scroller` are instances of `inpulse`, so you can use the
+methods below
+
 ### Impulse(renderFn)
 
   Initializes a new physics object with a render function.  Whenever
@@ -19,7 +22,7 @@ the page, so make sure your renderer debounces the updates.
 
 ```javascript
 var custom = Impulse(function(x, y) {
-  //maybe pass the position to Facebook React, Ember, or d3 here.
+  //pass the position to your favorite JS library
 })
 ```
 
@@ -27,8 +30,8 @@ var custom = Impulse(function(x, y) {
 
 
   Sets the css property in the first argument to the value returned by the function
-in the second, for every element passed into the constructor, every time the
-physics object's position changes. If you set a custom render function in the
+in the second, every time the physics object's position changes. (This happens for every
+element in the constructor.) If you set a custom render function in the
 constructor this method doesn't do anything, since you're manually rendering
 yourself.
 
@@ -38,7 +41,9 @@ elements you passed in.  This function is called once for each element in the
 list.
 
 ```javascript
-impulse.style('translate', function(x, y, index) { return x + 'px, ' + y + 'px' })
+impulse.style('translate', function(x, y, index) {
+  return x + 'px, ' + y + 'px';
+})
 ```
 
 ### impulse.style(cssObj)
@@ -48,7 +53,7 @@ anotherProp: anotherValFn }`.
 
 ```javascript
 impulse.style({
-  translate: function(x, y, index) { return x + 'px, ' + y + 'px' },
+  translate: function(x, y, index){return x + 'px, ' + y + 'px'},
   opacity: function(x) { return x / 1000 },
 })
 ```
@@ -88,7 +93,7 @@ interaction.
   Get's the current velocity of the object, if an animation is running, this
 will be the current velocity from the animation.
 
-### <a id="impulse-spring">impulse.spring(opts)</a>
+### <a id="impulse-spring">impulse.spring(options)</a>
 
 ####Options:
   * **tension:** the spring's tension (default: 100)
