@@ -23,13 +23,12 @@ act as if it's being pulled up by a spring.
 `.nav-header` with a hamburger menu icon `.hamburger-menu-handle` (three
 bars), which when clicked or dragged, will open and close the menu.
 
-  Add some basic css.  To keep this post reasonable I'm not going to explain
-everything about the css.  The important thing is that it creates a menu that
-is the full height and width of the viewport, and shifts it off screen, above
+  Add some basic css. Don't worry about this - the important thing is that it creates a menu that
+is the full height and width of the viewport and shifts it off screen, above
 the viewport.
 
-  We'll start off by creating a physics object for the menu, since the menu is
-going to be vertical, we only need to add css to animate on the y axis.
+  We'll start off by creating a physics object for the menu. Since the menu is
+going to be vertical, we only need to add css to animate along the y axis.
 
 ```javascript
   var menu = new Physics(menuEl)
@@ -41,8 +40,7 @@ accelerated, or sprung), we update the css `transform: translateY` property, to 
 current y position.
 
   Next we'll create a boundry for where we want the menu to be dragged.
-Esentially we're preventing the menu from being pulled past the bottom of
-the screen.
+ This prevents the menu from being pulled past the bottom of the screen.
 
 ```javascript
   var boundry = Physics.Boundry({ top: 0, bottom: window.innerHeight })
@@ -50,21 +48,19 @@ the screen.
 
   Now, to build to the actual interaction, we start off by making the menu
 draggable within our boundry.  We specify `handles`, which are the elements
-that we interact with to drag the menu.  In this case, that's the hamburger
+that the user interacts with to drag the menu.  In this case, that's the hamburger
 menu, and the `close` bar on the bottom.
 
 ```javascript
 var drag = menu.drag({ handle: handleEls, boundry: boundry })
 ```
 
-  In the background, Luster Physics takes the user input and uses it to move
-the menu and calculate the velocity of the user's movements.
+  In the background, Luster Physics takes the users actions and uses them to move
+the menu and calculate the velocity of the user's movement.
 
   If you run this code right now, you can pull the menu open by dragging
 the hambuger menu, but once you let go it just sticks.  The next step is
 to create an animation that flows from the user's movement.
-
-  The next step is to animate the menu, once the user has stopped dragging.
 
 ```javascript
 function end() {
@@ -86,20 +82,16 @@ function end() {
 drag.on('end', end)
 ```
 
-  The end function we've defined here check's if the user actually moved while
+  The end function we've defined here checks if the user actually moved while
 dragging.  If they moved the menu, we determine whether to open or close the
-menu based on whether the menu's is currently moving up or down.  If they
-didn't move at all(essentially a tap), we just toggle the open state of the
-menu.
-
-  Once we know if the menu is opening or closing, we either accelerate to the
+menu based on whether the menu is currently moving up or down.  If they
+didn't move at all (i.e. they tapped it), we just toggle the open state of the
+menu.  Once we know if the menu is opening or closing, we either accelerate to the
 bottom, or spring to the top.
 
-  Most of the options (tension, damping, acceleration, etc) are values that I
-found by playing around with the numbers until I found something that felt
-good.  It's important that you do that yourself, so that the feel of your
-interactions fit with your app.
+  Annnnndd we're done! You can access the [full code here](https://github.com/luster-io/demo-pull-down-menu/blob/master/app/scripts/app.js), or play with the codePen.
 
-  So now we should have working pull down menu with a nice bounce.
-
-You can access the [full code here](https://github.com/luster-io/demo-pull-down-menu/blob/master/app/scripts/app.js).
+  When you're building something with Impulse, you'll want to play around with the
+numerical parameters (tension, damping, acceleration, etc) so that the interaction
+matches the unique feeling of your app.  This might take a bit of experimentation, but
+you'll get a really unique feeling for your interactions. 
