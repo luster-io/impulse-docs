@@ -3,6 +3,8 @@
 an array-like collection of elements (jQuery, NodeList, etc).</p>
 <pre><code class="language-javascript">var menu = Impulse($(&#39;.myMenu&#39;))
 var scroller = Impulse(document.getElementById(&#39;.myScroller&#39;))</code></pre>
+<p>NOTE: Now <code>menu</code> and <code>scroller</code> are instances of <code>inpulse</code>, so you can use the
+methods below</p>
 <h3>Impulse(renderFn)</h3>
 <p>  Initializes a new physics object with a render function.  Whenever
 there is a change in the state of the physics object, the render function
@@ -10,24 +12,26 @@ will be called.</p>
 <p>  NOTE: This will be called more often than you actually want to draw to
 the page, so make sure your renderer debounces the updates.</p>
 <pre><code class="language-javascript">var custom = Impulse(function(x, y) {
-  //maybe pass the position to Facebook React, Ember, or d3 here.
+  //pass the position to your favorite JS library
 })</code></pre>
 <h3><a id="impulse-style">impulse.style(property, valueFn)</a></h3>
 <p>  Sets the css property in the first argument to the value returned by the function
-in the second, for every element passed into the constructor, every time the
-physics object&#39;s position changes. If you set a custom render function in the
+in the second, every time the physics object&#39;s position changes. (This happens for every
+element in the constructor.) If you set a custom render function in the
 constructor this method doesn&#39;t do anything, since you&#39;re manually rendering
 yourself.</p>
 <p>  The first two arguments to <code>valueFn</code> are the <code>x</code> and <code>y</code> coordinates of the
 impulse object. The third argument is the index of the element in the list of
 elements you passed in.  This function is called once for each element in the
 list.</p>
-<pre><code class="language-javascript">impulse.style(&#39;translate&#39;, function(x, y, index) { return x + &#39;px, &#39; + y + &#39;px&#39; })</code></pre>
+<pre><code class="language-javascript">impulse.style(&#39;translate&#39;, function(x, y, index) {
+  return x + &#39;px, &#39; + y + &#39;px&#39;;
+})</code></pre>
 <h3>impulse.style(cssObj)</h3>
 <p>  Style can also be an object of the style <code>{ cssProperty: valueFn,
 anotherProp: anotherValFn }</code>.</p>
 <pre><code class="language-javascript">impulse.style({
-  translate: function(x, y, index) { return x + &#39;px, &#39; + y + &#39;px&#39; },
+  translate: function(x, y, index){return x + &#39;px, &#39; + y + &#39;px&#39;},
   opacity: function(x) { return x / 1000 },
 })</code></pre>
 <h3><a id="impulse-position">impulse.position(x, y)</a></h3>
@@ -49,7 +53,7 @@ interaction.</p>
 <h3>impulse.velocity()</h3>
 <p>  Get&#39;s the current velocity of the object, if an animation is running, this
 will be the current velocity from the animation.</p>
-<h3><a id="impulse-spring">impulse.spring(opts)</a></h3>
+<h3><a id="impulse-spring">impulse.spring(options)</a></h3>
 <h4>Options:</h4>
 <ul>
 <li><strong>tension:</strong> the spring&#39;s tension (default: 100)</li>
