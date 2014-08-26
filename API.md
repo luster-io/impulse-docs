@@ -10,7 +10,6 @@ var scroller = Impulse(document.getElementById('.myScroller'))
 
 ### Impulse(renderFn)
 
-
   Initializes a new physics object with a render function.  Whenever
 there is a change in the state of the physics object, the render function
 will be called.

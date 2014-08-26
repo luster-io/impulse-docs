@@ -1,5 +1,3 @@
 #Basics
 
 ##Your first spring
-
-
