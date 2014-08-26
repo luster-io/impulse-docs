@@ -39,15 +39,8 @@
         a.hidden-md.hidden-lg.button(href="http://luster-io.github.io/demo-pull-down-menu" target="_blank") Try It
 
 
-    .example.simulated-scrolling
+    .example.inertial-scrolling
       h2 Simulated Scroll
-      .warning
-        h3 ACHTUNG!
-        :markdown
-          Unless your situation is extreme, you should probably not use
-          simulated scrolling in a real app, since there are A TON of optimizations
-          that modern mobile browsers do to give you the silkiest, smoothest
-          possible scrolling experience.
 
       :markdown
 
@@ -61,6 +54,9 @@
         a.button(href="https://github.com/luster-io/demo-simulated-scrolling") Github
         a.hidden-xs.hidden-sm.button(href="http://luster-io.github.io/demo-simulated-scrolling" target="preview-frame") Try It
         a.hidden-md.hidden-lg.button(href="http://luster-io.github.io/demo-simulated-scrolling" target="_blank") Try It
+
+      :markdown
+        NOTE: This example shows how concise Impulse is, but mobile web browsers already do scrolling well by default
 
     .example.oridomi
       h2 Oridomi Cover
@@ -87,14 +83,13 @@
       .notice
         h3 BETA
 
-        This demo is using an experimental optimization branch of impulse, and doesn't
-        perform very well on a lot of devices.
+        This demo is using an experimental optimization branch of impulse
 
       :markdown
         Taking the previous example to the extreme, we added bouncy scrolling,
-        similar to iOS 7 Messages App bouncy scroll.  This example may be slower
-        on older devices, due to the number of compositor RenderLayers (each
-        message), as well as the number of springs that need to be simulated.
+        which replicates the iOS 7 Messages App bouncy scroll.  Due to the number of compositor
+        RenderLayers (each message) and the number of springs that need to be simulated, 
+        this example may be slower on older devices.
 
       .button-group
         a.button(href="https://github.com/luster-io/demo-bounce-scroll") Github
