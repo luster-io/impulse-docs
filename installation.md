@@ -18,7 +18,7 @@ Component support coming soon!
 
 ##Raw Git
 
-```html
+```markup
 <script src="http://cdn.rawgit.com/luster-io/impulse/master/impulse.js"></script>
 ```
 
@@ -26,7 +26,7 @@ Component support coming soon!
 
 Get `build/impulse.js` or `build/impulse.min.js` from github.
 
-```html
+```markup
 <script src="/scripts/impulse.js"></script>
 ```
 

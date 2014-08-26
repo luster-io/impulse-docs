@@ -44,18 +44,18 @@
     animate from the last position and velocity.
 
     ```javascript
-      var boundry = Impulse.Boundry({
-        top: 0,
-        left: 0,
-        bottom: 1000,
-        right: 1000
-      })
-      ball.drag({ boundry: boundry })
+      var x = (window.innerWidth / 2) - 25
+        , y = (window.innerHeight / 2) - 25
+
+      ball.position(x, y)
+
+      ball.drag()
         .on('end', function() {
-          ball.spring().to(boundry)
+          ball.spring().to(x, y)
         })
     ```
 
-    This will cause the ball to spring to the boundry when the user stops dragging it.
+    This will cause the ball to spring back to the center, but taking the user's velocity into
+    account.
 
   != partial('./_codepen', { title: 'Animating after Drag', slug: 'ejtry' })
