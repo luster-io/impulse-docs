@@ -1,4 +1,6 @@
 <!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="styles/prism.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,300,400,700" type="text/css"></head><body><nav><div class="logo"><a href="/">Impulse</a></div><div class="links hidden-xs hidden-sm"><a href="guides.html">Guides</a><a href="api.html">API</a><a href="examples.html">Examples</a><a href="https://github.com/luster-io/impulse">Github</a></div><div class="menu-handle hidden-md hidden-lg"><span></span></div></nav><div class="pull-down-menu hidden-md hidden-lg"><a href="guides.html">Guides</a><a href="api.html">API</a><a href="examples.html">Examples</a><a href="https://github.com/luster-io/impulse">Github</a><div class="close-handle"><div class="arrow-left"></div><div class="arrow-right"></div></div></div><div class="container"><div class="toc col-sm-3"><h4>Getting Started</h4><ul><li><a href="guides.html">Overview</a></li><li><a href="installation.html">Installation</a></li></ul><h4>Basic Usage</h4><ul><li><a href="basics.html">Basics</a></li><li><a href="basics.html#springing">Springing</a></li><li><a href="basics.html#accelerating">Accelerating</a></li><li><a href="basics.html#decelerating">Decelerating</a></li><li><a href="basics.html#chaining">Chaining</a></li><li><a href="basics.html#animating-other-properties">Animating Other Properties</a></li></ul><h4>Interacting</h4><ul><li><a href="interacting.html#dragging">Dragging</a></li><li><a href="interacting.html#animating">Animations</a></li></ul><h4>Tutorials</h4><ul><li><a href="pull-down-menu.html">Pulldown Menu</a></li></ul></div><div class="contents col-sm-9"><div id="menu-tutorial"><h1>Pull Down Menu</h1>
+<p data-height="564" data-theme-id="8002" data-slug-hash="nmewI" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/xcoderzach/pen/nmewI/'>Pull Down Menu</a> by Zach Smith (<a href='http://codepen.io/xcoderzach'>@xcoderzach</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
 <p>  One of the easiest things to build with luster physics is a pull down menu.
 We&#39;ll build a pulldown menu that accelerates as if it were being pulled down
 by gravity and bounces when it hits the bottom. When it&#39;s closing it will
@@ -15,32 +17,29 @@ act as if it&#39;s being pulled up by a spring.</p>
 <p>  We have the menu itself <code>.pull-down-menu</code>, and then we have a top nav bar
 <code>.nav-header</code> with a hamburger menu icon <code>.hamburger-menu-handle</code> (three
 bars), which when clicked or dragged, will open and close the menu.</p>
-<p>  Add some basic css.  To keep this post reasonable I&#39;m not going to explain
-everything about the css.  The important thing is that it creates a menu that
-is the full height and width of the viewport, and shifts it off screen, above
+<p>  Add some basic css. Don&#39;t worry about this - the important thing is that it creates a menu that
+is the full height and width of the viewport and shifts it off screen, above
 the viewport.</p>
-<p>  We&#39;ll start off by creating a physics object for the menu, since the menu is
-going to be vertical, we only need to add css to animate on the y axis.</p>
+<p>  We&#39;ll start off by creating a physics object for the menu. Since the menu is
+going to be vertical, we only need to add css to animate along the y axis.</p>
 <pre><code class="language-javascript">  var menu = new Physics(menuEl)
     .style(&#39;translateY&#39;, function(position) { return position.y + &#39;px&#39; })</code></pre>
 <p>  What this does is, as the position of the menu changes, (being dragged,
 accelerated, or sprung), we update the css <code>transform: translateY</code> property, to the
 current y position.</p>
 <p>  Next we&#39;ll create a boundry for where we want the menu to be dragged.
-Esentially we&#39;re preventing the menu from being pulled past the bottom of
-the screen.</p>
+ This prevents the menu from being pulled past the bottom of the screen.</p>
 <pre><code class="language-javascript">  var boundry = Physics.Boundry({ top: 0, bottom: window.innerHeight })</code></pre>
 <p>  Now, to build to the actual interaction, we start off by making the menu
 draggable within our boundry.  We specify <code>handles</code>, which are the elements
-that we interact with to drag the menu.  In this case, that&#39;s the hamburger
+that the user interacts with to drag the menu.  In this case, that&#39;s the hamburger
 menu, and the <code>close</code> bar on the bottom.</p>
 <pre><code class="language-javascript">var drag = menu.drag({ handle: handleEls, boundry: boundry })</code></pre>
-<p>  In the background, Luster Physics takes the user input and uses it to move
-the menu and calculate the velocity of the user&#39;s movements.</p>
+<p>  In the background, Luster Physics takes the users actions and uses them to move
+the menu and calculate the velocity of the user&#39;s movement.</p>
 <p>  If you run this code right now, you can pull the menu open by dragging
 the hambuger menu, but once you let go it just sticks.  The next step is
 to create an animation that flows from the user&#39;s movement.</p>
-<p>  The next step is to animate the menu, once the user has stopped dragging.</p>
 <pre><code class="language-javascript">function end() {
   if(drag.moved()) {
     isOpen = menu.direction(&#39;down&#39;)
@@ -58,17 +57,15 @@ to create an animation that flows from the user&#39;s movement.</p>
 }
 
 drag.on(&#39;end&#39;, end)</code></pre>
-<p>  The end function we&#39;ve defined here check&#39;s if the user actually moved while
+<p>  The end function we&#39;ve defined here checks if the user actually moved while
 dragging.  If they moved the menu, we determine whether to open or close the
-menu based on whether the menu&#39;s is currently moving up or down.  If they
-didn&#39;t move at all(essentially a tap), we just toggle the open state of the
-menu.</p>
-<p>  Once we know if the menu is opening or closing, we either accelerate to the
+menu based on whether the menu is currently moving up or down.  If they
+didn&#39;t move at all (i.e. they tapped it), we just toggle the open state of the
+menu.  Once we know if the menu is opening or closing, we either accelerate to the
 bottom, or spring to the top.</p>
-<p>  Most of the options (tension, damping, acceleration, etc) are values that I
-found by playing around with the numbers until I found something that felt
-good.  It&#39;s important that you do that yourself, so that the feel of your
-interactions fit with your app.</p>
-<p>  So now we should have working pull down menu with a nice bounce.</p>
-<p>You can access the <a href="https://github.com/luster-io/demo-pull-down-menu/blob/master/app/scripts/app.js">full code here</a>.</p>
+<p>  Annnnndd we&#39;re done! You can access the <a href="https://github.com/luster-io/demo-pull-down-menu/blob/master/app/scripts/app.js">full code here</a>, or play with the codePen.</p>
+<p>  When you&#39;re building something with Impulse, you&#39;ll want to play around with the
+numerical parameters (tension, damping, acceleration, etc) so that the interaction
+matches the unique feeling of your app.  This might take a bit of experimentation, but
+you&#39;ll get a really unique feeling for your interactions. </p>
 </div></div></div><script src="scripts/prism.js"></script><script src="scripts/impulse.js"></script><script src="scripts/main.js"></script><script src="//codepen.io/assets/embed/ei.js" async></script></body></html>
