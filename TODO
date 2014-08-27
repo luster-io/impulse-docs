@@ -25,7 +25,7 @@
 [X]Put together "guides" page.
 [X]Email people.
 [X]Make touch targets bigger and higher(for close button) pull down menu.
-[ ]default link color
+[X]default link color
 [ ]Edit guides page
 [ ]Edit api page
 [ ]Edit Examples page
@@ -36,7 +36,8 @@
 [ ]Style codepens.
 [ ]Landing page.
 [ ]Luster page.
-[ ]setup email
+[ ]setup email.
+[ ]ios chatheads x not showing up.
 
 Later
 [ ]Highlight current link.

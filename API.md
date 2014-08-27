@@ -1,4 +1,4 @@
-### <a id="impulse-constructor">Impulse(els)</a>
+### Impulse(els)<a id="impulse-constructor" class="anchor"></a>
 
   Initializes a new `impulse` object with a single element or
 an array-like collection of elements (jQuery, NodeList, etc).
@@ -26,7 +26,7 @@ var custom = Impulse(function(x, y) {
 })
 ```
 
-### <a id="impulse-style">impulse.style(property, valueFn)</a>
+### impulse.style(property, valueFn)<a id="impulse-style" class="anchor"></a>
 
 
   Sets the css property in the first argument to the value returned by the function
@@ -58,7 +58,7 @@ impulse.style({
 })
 ```
 
-### <a id="impulse-position">impulse.position(x, y)</a>
+### impulse.position(x, y)<a id="impulse-position" class="anchor"></a>
 
   Sets the current position of the physics object.  Returns an object with
 `x` and `y` properties.
@@ -80,7 +80,7 @@ interaction.
   var position = impulse.position() // { x: 50, y: 50 }
 ```
 
-### <a id="impulse-velocity">impulse.velocity(x, y)</a>
+### impulse.velocity(x, y)<a id="impulse-velocity" class="anchor"></a>
 
   Set's the velocity of the object.  Useful for launching animations
 that don't flow from the user's movement (e.g. a tap that causes a menu to open).
@@ -93,7 +93,7 @@ interaction.
   Get's the current velocity of the object, if an animation is running, this
 will be the current velocity from the animation.
 
-### <a id="impulse-spring">impulse.spring(options)</a>
+### impulse.spring(options)<a id="impulse-spring" class="anchor"></a>
 
 ####Options:
   * **tension:** the spring's tension (default: 100)
@@ -106,7 +106,7 @@ Returns an `Animation`.
 var animation = impulse.spring({ tension: 100, damping: 10 })
 ```
 
-### <a id="impulse-accelerate">phys.accelerate(options)</a>
+### phys.accelerate(options)<a id="impulse-accelerate" class="anchor"></a>
 
 ####Options:
   * **bounce:** (default: true)
@@ -117,7 +117,7 @@ var animation = impulse.spring({ tension: 100, damping: 10 })
   Accelerates from `from` position to `to` position at current `velocity`.
 Returns an `Animation`.
 
-### <a id="impulse-decelerate">phys.deccelerate(options)</a>
+### phys.deccelerate(options)<a id="impulse-decelerate" class="anchor"></a>
 
 ####Options:
   * **deceleration:** How fast to decelerate(default: 1000)
@@ -125,7 +125,7 @@ Returns an `Animation`.
   Decelerates from `from` position to `to` position at current `velocity`.
 Returns an `Animation`.
 
-## <a id="impulse-interact">impulse.interact(options)</a>
+## impulse.interact(options)<a id="impulse-interact" class="anchor"></a>
 
 ####Options:
   * **boundry:** the boundry of where the object is allowed to be moved. (default: none)
@@ -139,7 +139,7 @@ will record the final velocity.
 impulse.interact({})
 ```
 
-## <a id="impulse-interact">impulse.drag()</a>
+## impulse.drag()<a id="impulse-interact" class="anchor"></a>
 
 ####Options:
   * **boundry:** the boundry of where the object is allowed to be moved. (default: none)
@@ -148,7 +148,7 @@ impulse.interact({})
   Allows a user to drag a physics object.  Automatically calculates `velocity`.
 
 
-## <a id="impulse-attach-spring">impulse.attachSpring(attachment, opts)</a>
+## impulse.attachSpring(attachment, opts)<a id="impulse-attach-spring" class="anchor"></a>
 
   The `attachSpring` method works differently from other animation methods, in
   that it is constantly running, and responds to updates to the position of
@@ -173,7 +173,7 @@ the animation is running.
 ```javascript
 var attachedSpring = phys.attachSpring(attachment, opts)
 ```
-## <a id="impulse-direction">impulse.direction(direction)</a>
+## impulse.direction(direction)<a id="impulse-direction" class="anchor"></a>
 
   Pass in a string, `"up" "down" "left" "right"` will return true
 if moving in that direction, and false otherwise.
@@ -199,21 +199,60 @@ the animation is running.
 ```javascript
 var attachedSpring = phys.attachSpring(attachment, opts)
 ```
+##Animation
 
+###animation.to(x, y)<a id="animation-to" class="anchor"></a>
+
+   This sets the position that the animation is moving towards.  This defaults to
+the current position of the physics object.
+
+```javascript
+impulse.spring().to(50, 50).start()
+```
+
+###animation.from(x, y)<a id="animation-from" class="anchor"></a>
+
+   This sets the position that the animation starts at.  This defaults to
+the current position of the physics object.
+
+```javascript
+impulse.spring().from(0, 0).start()
+```
+
+###animation.velocity(x, y)<a id="animation-velocity" class="anchor"></a>
+
+  This sets the initial velocity for the animation.If not set, the velocity
+  defaults to the current velocity of the physics object.
+
+```javascript
+impulse.accelerate().velocity(1000, 1000).start()
+```
+
+###animation.start()<a id="animation-start" class="anchor"></a>
+
+   Starts the animation running.  This will cancel any other animations or
+interactions running on this impulse object. This method is bound to the
+`animation`, so you can conveniently pass it around without having to manually
+bind it (e.g. to a promise).
+
+```javascript
+impulse.accelerate().start()
+  .then(impulse.spring().start)
+```
 
 ##Drag
 
-###<a id="drag-on">drag.on('start|end|move', callback)</a>
+###drag.on('start|end|move', callback)<a id="drag-on" class="anchor"></a>
 
   Listen for `start`, `end`, or `move` events.
 
-##<a id="drag-moved">#drag.moved()</a>
+###drag.moved()<a id="drag-moved" class="anchor"></a>
 
   Returns whether the user actually moved during the drag.
 
 ##Interaction
 
-###<a id="interaction-start">interaction.start()</a>
+###interaction.start()<a id="interaction-start" class="anchor"></a>
 
   Starts the interaction, returns a promise that will fulfill when end is called
 or reject when the interaction is cancelled.
@@ -228,7 +267,7 @@ var interaction = impulse.interact()
 interaction.start()
 ```
 
-###<a id="interaction-position">interaction.position(x, y)</a>
+###interaction.position(x, y)<a id="interaction-position" class="anchor"></a>
 
   Updates the position of the physics object.  This position, along with the time it occured will be used to calculate the velocity of the physics object.
 
@@ -238,7 +277,7 @@ interaction.start()
 interaction.position(50, 50)
 ```
 
-###<a id="interaction-end">interaction.end()</a>
+###interaction.end()<a id="interaction-end" class="anchor"></a>
 
   Ends the interaction.You can do this on touchend.Returns a promise fulfilled
 with the final state of the interaction.
@@ -252,7 +291,7 @@ interaction.end()
 
 ##AttachedSpring
 
-###<a id="attached-spring-stop">attachedSpring.stop()
+###attachedSpring.stop()<a id="attached-spring-stop" class="anchor"></a>
 
   Stops the spring from running.
 
@@ -260,7 +299,7 @@ interaction.end()
 spring.stop()
 ```
 
-###<a id="attached-spring-position">attachedSpring.position()
+###attachedSpring.position()<a id="attached-spring-position" class="anchor"></a>
 
   Returns the current {x, y} of the spring
 
@@ -277,52 +316,11 @@ affect the simulation.
 spring.position(100, 100)
 ```
 
-###<a id="attached-spring-velocity">attachedSpring.velocity(x, y)</a>
+###attachedSpring.velocity(x, y)<a id="attached-spring-velocity" class="anchor"></a>
 
   Updates the velocity of the spring in flight.If the spring is running, this
   will affect the simulation.
 
 ```javascript
 spring.velocity(50, 50)
-```
-
-##Animation
-
-###<a id="animation-to">animation.to(x, y)</a>
-
-   This sets the position that the animation is moving towards.  This defaults to
-the current position of the physics object.
-
-```javascript
-impulse.spring().to(50, 50).start()
-```
-
-###<a id="animation-from">animation.from(x, y)</a>
-
-   This sets the position that the animation starts at.  This defaults to
-the current position of the physics object.
-
-```javascript
-impulse.spring().from(0, 0).start()
-```
-
-###<a id="animation-velocity">animation.velocity(x, y)</a>
-
-  This sets the initial velocity for the animation.If not set, the velocity
-  defaults to the current velocity of the physics object.
-
-```javascript
-impulse.accelerate().velocity(1000, 1000).start()
-```
-
-###<a id="animation-start">animation.start()</a>
-
-   Starts the animation running.  This will cancel any other animations or
-interactions running on this impulse object. This method is bound to the
-`animation`, so you can conveniently pass it around without having to manually
-bind it (e.g. to a promise).
-
-```javascript
-impulse.accelerate().start()
-  .then(impulse.spring().start)
 ```
