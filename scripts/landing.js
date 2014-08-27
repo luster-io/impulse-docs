@@ -35,8 +35,8 @@
     .style('translate', function(x, y)  { return x + 'px,' + y + 'px'})
 
   var bounce = function() {
-    if(!dragging)
-      physicsHeader.spring().velocity(0, -250).from(0, 0).to(0, 0).start()
+    //if(!dragging)
+    physicsHeader.spring().velocity(0, -250).from(0, 0).to(0, 0).start()
   }
 
   setTimeout(bounce, 1000)
