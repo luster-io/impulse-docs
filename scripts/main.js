@@ -1,4 +1,4 @@
-function() {
+(function() {
   var menuEl = document.querySelector('.pull-down-menu')
   var handleEls = document.querySelectorAll('.menu-handle, .close-handle')
   var boundry = new Impulse.Boundry({ top: 0, bottom: window.innerHeight, left: 0, right: 0 })
@@ -7,7 +7,7 @@ function() {
   var menu = new Impulse(menuEl)
     .style('translateY', function(x, y) { return y + 'px' })
 
-  var drag = menu.drag({ handle: handleEls, boundry: boundry, direction: 'vertical' })
+  var menuDrag = menu.drag({ handle: handleEls, boundry: boundry, direction: 'vertical' })
 
   window.addEventListener('resize', function() {
     boundry.bottom = window.innerHeight
@@ -25,7 +25,7 @@ function() {
 
     if(isOpen) {
       menuEl.classList.add('open')
-      menu.accelerate({ acceleration: 1500, bounceAcceleration: 4000, bounce: this.moved() })
+      menu.accelerate({ acceleration: 1500, bounceAcceleration: 4000, bounce:true })
         .to(0, boundry.bottom).start()
         .then(function() {
         })
@@ -36,4 +36,5 @@ function() {
     }
   }
 
-  drag.on('end', end)
+  menuDrag.on('end', end)
+}())

@@ -17,4 +17,12 @@ do away with the browser&#39;s layout engine, in favor of converting everything
 into a hardware accelerated render layer and controlling everything itself.
 Impulse is a much small library that provides physics based animations and
 interactions.</p>
+<h2>Why not CSS Animations?</h2>
+<p>  CSS animations and transitions are a great for creating simple, static
+animations.  However, when you&#39;re building animations with multiple steps,
+involving multiple elements, or that need to react dynamically to a users
+motion, CSS animations become very unweildy.</p>
+<p>  Impulse doesn&#39;t generate CSS animations on the fly, because there is a long
+delay (&gt; 200ms) between when the animation is generated, and when the animation
+beings playing.</p>
 </div></div></div><script src="scripts/prism.js"></script><script src="scripts/impulse.js"></script><script src="scripts/main.js"></script><script src="//codepen.io/assets/embed/ei.js" async></script></body></html>
