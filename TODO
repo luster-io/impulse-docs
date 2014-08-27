@@ -24,23 +24,25 @@
 [X]RawGIT CDN
 [X]Put together "guides" page.
 [X]Email people.
-[ ]setup email
+[X]Make touch targets bigger and higher(for close button) pull down menu.
+[ ]default link color
+[ ]Edit guides page
+[ ]Edit api page
+[ ]Edit Examples page
+[ ]Edit github readme page
 [ ]Link all the sidebars correctly.
    [X]API
    [ ]Guides
+[ ]Style codepens.
 [ ]Landing page.
-[ ]Make touch targets bigger and higher(for close button) pull down menu.
-[ ]Can't tap chatheads on mobile.
+[ ]Luster page.
+[ ]setup email
+
+Later
 [ ]Highlight current link.
 [ ]Oridomi overflow hidden.
 [ ]Write scroll tutorial.
-[ ]Logo.
 [ ]Logo animation.
 [ ]Add chat box to chat-head example.
-[ ]Luster page.
 [ ]D3 Example
 
-[]Edit guides page
-[]Edit api page
-[]Edit Examples page
-[]Edit github readme page
