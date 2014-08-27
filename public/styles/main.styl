@@ -116,13 +116,6 @@ code, pre {
   font-size: 16px;
 }
 
-.container {
-  width: 100%;
-  position: relative;
-  max-width: 960px;
-  padding-top: 80px;
-  margin: 0 auto;
-}
 
 .button-group {
   margin: 20px 0;
@@ -137,6 +130,10 @@ a.button {
   font-weight: 400;
   color: $primaryColor;
   margin: 0 20px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .preview {
@@ -166,8 +163,8 @@ a.button {
 }
 
 .landing {
+  padding-bottom: 70px;
   text-align: center;
-  padding-top: 70px;
 
   h1 {
     color: #333;
@@ -175,5 +172,42 @@ a.button {
 
   .button-group {
     margin-top: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .landing {
+    padding-top: 70px;
+  }
+
+  .container {
+    width: 100%;
+    position: relative;
+    max-width: 960px;
+    margin: 80px auto 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .landing h1 {
+    font-size: 50px;
+  }
+
+  .container {
+    width: 100%;
+    position: fixed;
+    max-width: 960px;
+    top: 70px;
+    bottom: 0px;
+    left: 50%;
+    padding-top: 10px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 }

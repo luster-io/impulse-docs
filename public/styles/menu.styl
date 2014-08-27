@@ -1,7 +1,6 @@
 $screen-md-min = 970px;
 $primaryColor = #FF2A68;
 
-
 nav {
   z-index: 10;
   position: fixed;
@@ -11,8 +10,7 @@ nav {
   height: 70px;
   background: white;
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, .1);
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+
 
   a:link, a:visited {
     color: $primaryColor;
@@ -31,11 +29,17 @@ nav {
 
 .menu-handle {
   position: absolute;
-  right: 30px;
-  top: 20px;
-  width: 35px;
-  height: 20px;
-  z-index:4;
+  right: 0px;
+  top: 0px;
+  padding: 23px 30px 0 30px;
+  width: 95px;
+  height: 69px;
+  /* we need this in order for android chrome to allow us to swipe more than once */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+
+  z-index: 4;
 }
 
 .menu-handle span, .menu-handle span:before, .menu-handle span:after {
@@ -65,8 +69,13 @@ nav {
   right: 0;
   bottom: 100%;
   padding-top: 71px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+
   z-index: 4;
   background-color: #fafafa;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, .1);
 
   a {
     display: block;
@@ -89,8 +98,12 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 20px;
+    height: 70px;
     background-color: #fafafa;
+    /* we need this in order for android chrome to allow us to swipe more than once */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
   }
 
   .arrow-left, .arrow-right {
@@ -100,6 +113,7 @@ nav {
     border-radius: 10px;
     position: absolute;
     left: 50%;
+    bottom: 15px;
     transition: transform .2s;
   }
 
