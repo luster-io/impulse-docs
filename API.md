@@ -110,7 +110,7 @@ var animation = impulse.spring({ tension: 100, damping: 10 })
 
 ####Options:
   * **bounce:** (default: true)
-  * **damping:** amount to damp the velocity on each bounce
+  * **restitution:** amount to damp the velocity on each bounce
   * **minBounceHeight:** 100 (default: 100)
   * **acceleration:** How fast to accelerate(default: 1000)
 
