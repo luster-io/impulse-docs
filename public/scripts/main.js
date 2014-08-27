@@ -1,4 +1,4 @@
-function() {
+(function() {
   var menuEl = document.querySelector('.pull-down-menu')
   var handleEls = document.querySelectorAll('.menu-handle, .close-handle')
   var boundry = new Impulse.Boundry({ top: 0, bottom: window.innerHeight, left: 0, right: 0 })
@@ -15,7 +15,7 @@ function() {
 
   function end() {
     if(this.moved()) {
-      isOpen = menu.direction('down')
+      isOpen = menu.direction('up')
     } else {
       isOpen = !isOpen
       if(isOpen) {
@@ -37,3 +37,4 @@ function() {
   }
 
   drag.on('end', end)
+}())

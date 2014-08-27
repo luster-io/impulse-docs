@@ -25,3 +25,17 @@ do away with the browser's layout engine, in favor of converting everything
 into a hardware accelerated render layer and controlling everything itself.
 Impulse is a much small library that provides physics based animations and
 interactions.
+
+Why not CSS Animations?
+-----------------------
+
+  CSS animations and transitions are a great for creating simple, static
+animations.  However, when you're building animations with multiple steps,
+involving multiple elements, or that need to react dynamically to a users
+motion, CSS animations become very unweildy.
+
+  Impulse doesn't generate CSS animations on the fly, because there is a long
+delay (> 200ms) between when the animation is generated, and when the animation
+beings playing.
+
+

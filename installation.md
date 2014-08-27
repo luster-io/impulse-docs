@@ -1,13 +1,13 @@
 #Installation
 
 ##Browserify
-```
+```bash
 npm install impulse
 ```
 
 ##Bower
 
-```
+```bash
 bower install impulse
 ```
 Exposes a global called Physics
