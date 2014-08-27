@@ -30,11 +30,11 @@
 [ ]Edit api page
 [ ]Edit Examples page
 [ ]Edit github readme page
-[ ]Link all the sidebars correctly.
+[X]Link all the sidebars correctly.
    [X]API
-   [ ]Guides
+   [X]Guides
 [ ]Style codepens.
-[ ]Landing page.
+[X]Landing page.
 [ ]Luster page.
 [ ]setup email.
 [ ]ios chatheads x not showing up.
