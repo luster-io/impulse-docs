@@ -5,7 +5,7 @@ an array-like collection of elements (jQuery, NodeList, etc).
 
 ```javascript
 var menu = Impulse($('.myMenu'))
-var scroller = Impulse(document.getElementById('.myScroller'))
+var scroller = Impulse(document.getElementById('myScroller'))
 ```
 
 NOTE: Now `menu` and `scroller` are instances of `inpulse`, so you can use the
