@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="styles/prism.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,300,400,700" type="text/css"></head><body><nav><div class="logo"><a href="/">Impulse</a></div><div class="links hidden-xs hidden-sm"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a></div><div class="menu-handle hidden-md hidden-lg"><span></span></div></nav><div class="pull-down-menu hidden-md hidden-lg"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a><div class="close-handle"><div class="arrow-left"></div><div class="arrow-right"></div></div></div><div class="container"><div class="toc col-sm-3"><h4>Impulse</h4><ul><li><a href="#impulse-constructor">Constructor</a></li><li><a href="#impulse-style">style</a></li><li><a href="#impulse-position">position</a></li><li><a href="#impulse-velocity">velocity</a></li><li><a href="#impulse-spring">spring</a></li><li><a href="#impulse-accelerate">accelerate</a></li><li><a href="#impulse-decelerate">decelerate</a></li><li><a href="#impulse-interact">interact</a></li><li><a href="#impulse-drag">drag</a></li><li><a href="#impulse-attachSpring">attachSpring</a></li><li><a href="#impulse-direction">attachSpring</a></li></ul><h4>Animation</h4><ul><li></li><a href="#animation-position">position</a><li></li><a href="#animation-position">velocity</a><li></li><a href="#animation-position">from</a><li></li><a href="#animation-position">to</a><li></li><a href="#animation-position">start</a><li></li><a href="#animation-position">cancel</a></ul><h4>Drag</h4><ul><li></li><a href="#drag-on">on</a><li></li><a href="#drag-events">events</a><li></li><a href="#drag-moved">moved</a></ul><h4>Interaction</h4><ul><li></li><a href="#interaction-position">position</a><li></li><a href="#interaction-position">velocity</a><li></li><a href="#interaction-position">from</a><li></li><a href="#interaction-position">to</a><li></li><a href="#interaction-position">start</a><li></li><a href="#interaction-position">cancel</a></ul><h4>AttachedSpring</h4><ul><li>position</li><li>velocity</li><li>start</li><li>stop</li></ul></div><div class="contents col-sm-9"><h1>API</h1><div class="docs"><h3><a id="impulse-constructor">Impulse(els)</a></h3>
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="styles/prism.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,300,400,700" type="text/css"></head><body><nav><div class="logo"><a href="/">Impulse</a></div><div class="links hidden-xs hidden-sm"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a></div><div class="menu-handle hidden-md hidden-lg"><span></span></div></nav><div class="pull-down-menu hidden-md hidden-lg"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a><div class="close-handle"><div class="arrow-left"></div><div class="arrow-right"></div></div></div><div class="container"><div class="toc col-sm-3"><h4>Impulse</h4><ul><li><a href="#impulse-constructor">Constructor</a></li><li><a href="#impulse-style">style</a></li><li><a href="#impulse-position">position</a></li><li><a href="#impulse-velocity">velocity</a></li><li><a href="#impulse-spring">spring</a></li><li><a href="#impulse-accelerate">accelerate</a></li><li><a href="#impulse-decelerate">decelerate</a></li><li><a href="#impulse-interact">interact</a></li><li><a href="#impulse-drag">drag</a></li><li><a href="#impulse-attachSpring">attachSpring</a></li><li><a href="#impulse-direction">attachSpring</a></li></ul><h4>Animation</h4><ul><li></li><a href="#animation-position">position</a><li></li><a href="#animation-position">velocity</a><li></li><a href="#animation-position">from</a><li></li><a href="#animation-position">to</a><li></li><a href="#animation-position">start</a><li></li><a href="#animation-position">cancel</a></ul><h4>Drag</h4><ul><li></li><a href="#drag-on">on</a><li></li><a href="#drag-events">events</a><li></li><a href="#drag-moved">moved</a></ul><h4>Interaction</h4><ul><li></li><a href="#interaction-position">position</a><li></li><a href="#interaction-position">velocity</a><li></li><a href="#interaction-position">from</a><li></li><a href="#interaction-position">to</a><li></li><a href="#interaction-position">start</a><li></li><a href="#interaction-position">cancel</a></ul><h4>AttachedSpring</h4><ul><li>position</li><li>velocity</li><li>start</li><li>stop</li></ul></div><div class="contents col-sm-9"><h1>API</h1><div class="docs"><h3>Impulse(els)<a id="impulse-constructor" class="anchor"></a></h3>
 <p>  Initializes a new <code>impulse</code> object with a single element or
 an array-like collection of elements (jQuery, NodeList, etc).</p>
 <pre><code class="language-javascript">var menu = Impulse($(&#39;.myMenu&#39;))
@@ -14,7 +14,7 @@ the page, so make sure your renderer debounces the updates.</p>
 <pre><code class="language-javascript">var custom = Impulse(function(x, y) {
   //pass the position to your favorite JS library
 })</code></pre>
-<h3><a id="impulse-style">impulse.style(property, valueFn)</a></h3>
+<h3>impulse.style(property, valueFn)<a id="impulse-style" class="anchor"></a></h3>
 <p>  Sets the css property in the first argument to the value returned by the function
 in the second, every time the physics object&#39;s position changes. (This happens for every
 element in the constructor.) If you set a custom render function in the
@@ -34,7 +34,7 @@ anotherProp: anotherValFn }</code>.</p>
   translate: function(x, y, index){return x + &#39;px, &#39; + y + &#39;px&#39;},
   opacity: function(x) { return x / 1000 },
 })</code></pre>
-<h3><a id="impulse-position">impulse.position(x, y)</a></h3>
+<h3>impulse.position(x, y)<a id="impulse-position" class="anchor"></a></h3>
 <p>  Sets the current position of the physics object.  Returns an object with
 <code>x</code> and <code>y</code> properties.</p>
 <p>NOTE: This does not affect the position of a running animation or
@@ -45,7 +45,7 @@ interaction.</p>
 <code>x</code> and <code>y</code> properties.</p>
 <pre><code class="language-javascript">  impulse.position(50, 50)
   var position = impulse.position() // { x: 50, y: 50 }</code></pre>
-<h3><a id="impulse-velocity">impulse.velocity(x, y)</a></h3>
+<h3>impulse.velocity(x, y)<a id="impulse-velocity" class="anchor"></a></h3>
 <p>  Set&#39;s the velocity of the object.  Useful for launching animations
 that don&#39;t flow from the user&#39;s movement (e.g. a tap that causes a menu to open).</p>
 <p>NOTE: This does not affect the velocity of a running animation or
@@ -53,7 +53,7 @@ interaction.</p>
 <h3>impulse.velocity()</h3>
 <p>  Get&#39;s the current velocity of the object, if an animation is running, this
 will be the current velocity from the animation.</p>
-<h3><a id="impulse-spring">impulse.spring(options)</a></h3>
+<h3>impulse.spring(options)<a id="impulse-spring" class="anchor"></a></h3>
 <h4>Options:</h4>
 <ul>
 <li><strong>tension:</strong> the spring&#39;s tension (default: 100)</li>
@@ -63,7 +63,7 @@ Returns an <code>Animation</code>.</p>
 </li>
 </ul>
 <pre><code class="language-javascript">var animation = impulse.spring({ tension: 100, damping: 10 })</code></pre>
-<h3><a id="impulse-accelerate">phys.accelerate(options)</a></h3>
+<h3>phys.accelerate(options)<a id="impulse-accelerate" class="anchor"></a></h3>
 <h4>Options:</h4>
 <ul>
 <li><strong>bounce:</strong> (default: true)</li>
@@ -74,7 +74,7 @@ Returns an <code>Animation</code>.</p>
 Returns an <code>Animation</code>.</p>
 </li>
 </ul>
-<h3><a id="impulse-decelerate">phys.deccelerate(options)</a></h3>
+<h3>phys.deccelerate(options)<a id="impulse-decelerate" class="anchor"></a></h3>
 <h4>Options:</h4>
 <ul>
 <li><p><strong>deceleration:</strong> How fast to decelerate(default: 1000)</p>
@@ -82,7 +82,7 @@ Returns an <code>Animation</code>.</p>
 Returns an <code>Animation</code>.</p>
 </li>
 </ul>
-<h2><a id="impulse-interact">impulse.interact(options)</a></h2>
+<h2>impulse.interact(options)<a id="impulse-interact" class="anchor"></a></h2>
 <h4>Options:</h4>
 <ul>
 <li><strong>boundry:</strong> the boundry of where the object is allowed to be moved. (default: none)</li>
@@ -93,7 +93,7 @@ will record the final velocity.</p>
 </li>
 </ul>
 <pre><code class="language-javascript">impulse.interact({})</code></pre>
-<h2><a id="impulse-interact">impulse.drag()</a></h2>
+<h2>impulse.drag()<a id="impulse-interact" class="anchor"></a></h2>
 <h4>Options:</h4>
 <ul>
 <li><strong>boundry:</strong> the boundry of where the object is allowed to be moved. (default: none)</li>
@@ -101,7 +101,7 @@ will record the final velocity.</p>
 <p>Allows a user to drag a physics object.  Automatically calculates <code>velocity</code>.</p>
 </li>
 </ul>
-<h2><a id="impulse-attach-spring">impulse.attachSpring(attachment, opts)</a></h2>
+<h2>impulse.attachSpring(attachment, opts)<a id="impulse-attach-spring" class="anchor"></a></h2>
 <p>  The <code>attachSpring</code> method works differently from other animation methods, in
   that it is constantly running, and responds to updates to the position of
   it&#39;s <code>attachment</code>.</p>
@@ -121,7 +121,7 @@ the animation is running.</p>
 </li>
 </ul>
 <pre><code class="language-javascript">var attachedSpring = phys.attachSpring(attachment, opts)</code></pre>
-<h2><a id="impulse-direction">impulse.direction(direction)</a></h2>
+<h2>impulse.direction(direction)<a id="impulse-direction" class="anchor"></a></h2>
 <p>  Pass in a string, <code>&quot;up&quot; &quot;down&quot; &quot;left&quot; &quot;right&quot;</code> will return true
 if moving in that direction, and false otherwise.</p>
 <p>  Impulse objects with <code>0</code> velocity will neither be moving up nor down.</p>
@@ -141,13 +141,33 @@ the animation is running.</p>
 </li>
 </ul>
 <pre><code class="language-javascript">var attachedSpring = phys.attachSpring(attachment, opts)</code></pre>
+<h2>Animation</h2>
+<h3>animation.to(x, y)<a id="animation-to" class="anchor"></a></h3>
+<p>   This sets the position that the animation is moving towards.  This defaults to
+the current position of the physics object.</p>
+<pre><code class="language-javascript">impulse.spring().to(50, 50).start()</code></pre>
+<h3>animation.from(x, y)<a id="animation-from" class="anchor"></a></h3>
+<p>   This sets the position that the animation starts at.  This defaults to
+the current position of the physics object.</p>
+<pre><code class="language-javascript">impulse.spring().from(0, 0).start()</code></pre>
+<h3>animation.velocity(x, y)<a id="animation-velocity" class="anchor"></a></h3>
+<p>  This sets the initial velocity for the animation.If not set, the velocity
+  defaults to the current velocity of the physics object.</p>
+<pre><code class="language-javascript">impulse.accelerate().velocity(1000, 1000).start()</code></pre>
+<h3>animation.start()<a id="animation-start" class="anchor"></a></h3>
+<p>   Starts the animation running.  This will cancel any other animations or
+interactions running on this impulse object. This method is bound to the
+<code>animation</code>, so you can conveniently pass it around without having to manually
+bind it (e.g. to a promise).</p>
+<pre><code class="language-javascript">impulse.accelerate().start()
+  .then(impulse.spring().start)</code></pre>
 <h2>Drag</h2>
-<h3><a id="drag-on">drag.on(&#39;start|end|move&#39;, callback)</a></h3>
+<h3>drag.on(&#39;start|end|move&#39;, callback)<a id="drag-on" class="anchor"></a></h3>
 <p>  Listen for <code>start</code>, <code>end</code>, or <code>move</code> events.</p>
-<h2><a id="drag-moved">#drag.moved()</a></h2>
+<h3>drag.moved()<a id="drag-moved" class="anchor"></a></h3>
 <p>  Returns whether the user actually moved during the drag.</p>
 <h2>Interaction</h2>
-<h3><a id="interaction-start">interaction.start()</a></h3>
+<h3>interaction.start()<a id="interaction-start" class="anchor"></a></h3>
 <p>  Starts the interaction, returns a promise that will fulfill when end is called
 or reject when the interaction is cancelled.</p>
 <h3>interaction.start(event)</h3>
@@ -155,12 +175,12 @@ or reject when the interaction is cancelled.</p>
 will move the object relative to this starting point.</p>
 <pre><code class="language-javascript">var interaction = impulse.interact()
 interaction.start()</code></pre>
-<h3><a id="interaction-position">interaction.position(x, y)</a></h3>
+<h3>interaction.position(x, y)<a id="interaction-position" class="anchor"></a></h3>
 <p>  Updates the position of the physics object.  This position, along with the time it occured will be used to calculate the velocity of the physics object.</p>
 <pre><code class="language-javascript">var interaction = impulse.interact()
 interaction.start()
 interaction.position(50, 50)</code></pre>
-<h3><a id="interaction-end">interaction.end()</a></h3>
+<h3>interaction.end()<a id="interaction-end" class="anchor"></a></h3>
 <p>  Ends the interaction.You can do this on touchend.Returns a promise fulfilled
 with the final state of the interaction.</p>
 <pre><code class="language-javascript">var interaction = impulse.interact()
@@ -168,38 +188,18 @@ interaction.start()
 //later
 interaction.end()</code></pre>
 <h2>AttachedSpring</h2>
-<h3><a id="attached-spring-stop">attachedSpring.stop()</h3>
+<h3>attachedSpring.stop()<a id="attached-spring-stop" class="anchor"></a></h3>
 <p>  Stops the spring from running.</p>
 <pre><code class="language-javascript">spring.stop()</code></pre>
-<h3><a id="attached-spring-position">attachedSpring.position()</h3>
+<h3>attachedSpring.position()<a id="attached-spring-position" class="anchor"></a></h3>
 <p>  Returns the current {x, y} of the spring</p>
 <pre><code class="language-javascript">var position = spring.position()</code></pre>
 <h3>attachedSpring.position(x, y)</h3>
 <p>  Updates the position of the spring.  If the spring is running, this will
 affect the simulation.</p>
 <pre><code class="language-javascript">spring.position(100, 100)</code></pre>
-<h3><a id="attached-spring-velocity">attachedSpring.velocity(x, y)</a></h3>
+<h3>attachedSpring.velocity(x, y)<a id="attached-spring-velocity" class="anchor"></a></h3>
 <p>  Updates the velocity of the spring in flight.If the spring is running, this
   will affect the simulation.</p>
 <pre><code class="language-javascript">spring.velocity(50, 50)</code></pre>
-<h2>Animation</h2>
-<h3><a id="animation-to">animation.to(x, y)</a></h3>
-<p>   This sets the position that the animation is moving towards.  This defaults to
-the current position of the physics object.</p>
-<pre><code class="language-javascript">impulse.spring().to(50, 50).start()</code></pre>
-<h3><a id="animation-from">animation.from(x, y)</a></h3>
-<p>   This sets the position that the animation starts at.  This defaults to
-the current position of the physics object.</p>
-<pre><code class="language-javascript">impulse.spring().from(0, 0).start()</code></pre>
-<h3><a id="animation-velocity">animation.velocity(x, y)</a></h3>
-<p>  This sets the initial velocity for the animation.If not set, the velocity
-  defaults to the current velocity of the physics object.</p>
-<pre><code class="language-javascript">impulse.accelerate().velocity(1000, 1000).start()</code></pre>
-<h3><a id="animation-start">animation.start()</a></h3>
-<p>   Starts the animation running.  This will cancel any other animations or
-interactions running on this impulse object. This method is bound to the
-<code>animation</code>, so you can conveniently pass it around without having to manually
-bind it (e.g. to a promise).</p>
-<pre><code class="language-javascript">impulse.accelerate().start()
-  .then(impulse.spring().start)</code></pre>
 </div></div></div><script src="scripts/prism.js"></script><script src="scripts/impulse.js"></script><script src="scripts/main.js"></script><script src="//codepen.io/assets/embed/ei.js" async></script></body></html>

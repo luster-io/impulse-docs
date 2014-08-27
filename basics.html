@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="styles/prism.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,300,400,700" type="text/css"></head><body><nav><div class="logo"><a href="/">Impulse</a></div><div class="links hidden-xs hidden-sm"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a></div><div class="menu-handle hidden-md hidden-lg"><span></span></div></nav><div class="pull-down-menu hidden-md hidden-lg"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a><div class="close-handle"><div class="arrow-left"></div><div class="arrow-right"></div></div></div><div class="container"><div class="toc col-sm-3"><h4>Getting Started</h4><ul><li><a href="guides.html">Overview</a></li><li><a href="installation.html">Installation</a></li></ul><h4>Basic Usage</h4><ul><li><a href="basics.html">Basics</a></li><li><a href="basics.html#springing">Springing</a></li><li><a href="basics.html#accelerating">Accelerating</a></li><li><a href="basics.html#decelerating">Decelerating</a></li><li><a href="basics.html#chaining">Chaining</a></li><li><a href="basics.html#animating-other-properties">Animating Other Properties</a></li></ul><h4>Interacting</h4><ul><li><a href="interacting.html#dragging">Dragging</a></li><li><a href="interacting.html#animating">Animations</a></li></ul><h4>Tutorials</h4><ul><li><a href="pull-down-menu.html">Pulldown Menu</a></li></ul></div><div class="contents col-sm-9"><h1>Basics</h1>
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="styles/prism.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,300,400,700" type="text/css"></head><body><nav><div class="logo"><a href="/">Impulse</a></div><div class="links hidden-xs hidden-sm"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a></div><div class="menu-handle hidden-md hidden-lg"><span></span></div></nav><div class="pull-down-menu hidden-md hidden-lg"><a href="examples.html">Examples</a><a href="guides.html">Guides</a><a href="api.html">API</a><a href="https://github.com/luster-io/impulse">Github</a><div class="close-handle"><div class="arrow-left"></div><div class="arrow-right"></div></div></div><div class="container"><div class="toc col-sm-3"><h4>Getting Started</h4><ul><li><a href="guides.html#overview">Overview</a></li><li><a href="installation.html#installation">Installation</a></li></ul><h4>Basic Usage</h4><ul><li><a href="basics.html">Basics</a></li><li><a href="basics.html#springing">Springing</a></li><li><a href="basics.html#accelerating">Accelerating</a></li><li><a href="basics.html#decelerating">Decelerating</a></li><li><a href="basics.html#chaining">Chaining</a></li><li><a href="basics.html#animating-other-properties">Animating Other Properties</a></li></ul><h4>Interacting</h4><ul><li><a href="interacting.html#dragging">Dragging</a></li><li><a href="interacting.html#animating">Animations</a></li></ul><h4>Tutorials</h4><ul><li><a href="pull-down-menu.html">Pulldown Menu</a></li></ul></div><div class="contents col-sm-9"><h1>Basics<a class="anchor" id="basics"></a></h1>
 <p>For these basic tutorials we&#39;ll have one impulse object, in this case
 a ball.  Our markup for the ball will be single div, and we&#39;ll style it
 so that it&#39;s round, like a ball.</p>
@@ -16,7 +16,7 @@ and tell it to update the css transform <code>translate</code> when the ball mov
     return x + &#39;px, &#39; + y + &#39;px&#39;
   })</code></pre>
 <p>Now that we&#39;ve got the ball, lets make it move!</p>
-<h2>Springing</h2>
+<h2>Springing<a class="anchor" id="springing"></a></h2>
 <p>To start, let&#39;s just try to get a ball to spring from one place to
 another.</p>
 <pre><code class="language-javascript">ball.spring({ tension: 100, damping: 10 })
@@ -30,7 +30,7 @@ below!</p>
 <p data-height="268" data-theme-id="8002" data-slug-hash="tcbJf" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Spring</a></p><div class="warning hidden-xs hidden-sm"><h3>WARNING: Exploding Springs</h3><p>If you set the <code>tension</code> option too high, it can cause the spring to
 <code>explode</code> off the screen.  Luckily, tension values high enough to cause
 the spring to explode would be impractical for an animation.</p>
-</div><h2>Accelerating</h2>
+</div><h2>Accelerating<a class="anchor" id="accelerating"></a></h2>
 <p>Now lets try some simulated gravity!</p>
 <p>This will drop our ball from (x: 0, y: 0) to (x: 100, y: 100). There&#39;s a
 lot of options here, so lets go through them one by one.</p>
@@ -48,7 +48,7 @@ when it bounces, it will rebound at 400 pixels per second.</p>
 so you can prevent the ball from making a ton of really small bounces.</p>
 </li>
 </ul>
-<p data-height="268" data-theme-id="8002" data-slug-hash="hvtEH" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Acceleration</a></p><h2>Decelerating</h2>
+<p data-height="268" data-theme-id="8002" data-slug-hash="hvtEH" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Acceleration</a></p><h2>Decelerating<a class="anchor" id="decelerating"></a></h2>
 <p>  Now let&#39;s make the ball start out fast and gently come to a stop.</p>
 <pre><code class="language-javascript">ball.decelerate({ deceleration: 500 })
   .velocity(300, 300)
@@ -60,7 +60,7 @@ second.</p>
 <p>When you run the code pen, you&#39;ll notice that the ball doesn&#39;t actually
 reach the destination.  That&#39;s because it slowed to a stop before reaching
 it.  Keep that in mind when using deceleration.</p>
-<p data-height="268" data-theme-id="8002" data-slug-hash="viugh" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Acceleration</a></p><h2>Chaining</h2>
+<p data-height="268" data-theme-id="8002" data-slug-hash="viugh" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Acceleration</a></p><h2>Chaining<a class="anchor" id="chaining"></a></h2>
 <p>What if we want to do two animations in a row?  That&#39;s super easy, because
 every animation returns a promise that resolves when it&#39;s done. So let&#39;s
 build an animation that accelerates down, but once it reaches the bottom,
@@ -79,7 +79,7 @@ and <code>from</code> positions both default to the current position of the obje
 everything just works.</p>
 <div class="notice"><h3>Important</h3><p>Notice that we don&#39;t call start when we pass it into <code>then</code>.  Impulse will
 do that when the acceleration finishes.</p>
-</div><p data-height="268" data-theme-id="8002" data-slug-hash="akdFl" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Acceleration</a></p><h2>Animating Other Properties</h2>
+</div><p data-height="268" data-theme-id="8002" data-slug-hash="akdFl" data-default-tab="result" class="codepen"><See>the Pen</See><a href="http://codepen.io/xcoderzach/pen/tcbJf/">Simple Acceleration</a></p><h2>Animating Other Properties<a class="anchor" id="animating-other-properties"></a></h2>
 <p>  In the previous example we only animated the <code>translate</code> property.
 But we can actually animate any css property.  Lets try animating the
 scale of our ball this time.</p>
