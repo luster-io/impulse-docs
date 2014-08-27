@@ -7,7 +7,7 @@
   var menu = new Impulse(menuEl)
     .style('translateY', function(x, y) { return y + 'px' })
 
-  var drag = menu.drag({ handle: handleEls, boundry: boundry, direction: 'vertical' })
+  var menuDrag = menu.drag({ handle: handleEls, boundry: boundry, direction: 'vertical' })
 
   window.addEventListener('resize', function() {
     boundry.bottom = window.innerHeight
@@ -25,7 +25,7 @@
 
     if(isOpen) {
       menuEl.classList.add('open')
-      menu.accelerate({ acceleration: 1500, bounceAcceleration: 4000, bounce: this.moved() })
+      menu.accelerate({ acceleration: 1500, bounceAcceleration: 4000, bounce:true })
         .to(0, boundry.bottom).start()
         .then(function() {
         })
@@ -36,5 +36,5 @@
     }
   }
 
-  drag.on('end', end)
+  menuDrag.on('end', end)
 }())
