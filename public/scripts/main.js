@@ -15,7 +15,7 @@
 
   function end() {
     if(this.moved()) {
-      isOpen = menu.direction('up')
+      isOpen = menu.direction('down')
     } else {
       isOpen = !isOpen
       if(isOpen) {

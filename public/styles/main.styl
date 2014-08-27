@@ -130,6 +130,10 @@ a.button {
   font-weight: 400;
   color: $primaryColor;
   margin: 0 20px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .preview {
@@ -186,6 +190,11 @@ a.button {
 }
 
 @media (max-width: 768px) {
+
+  .landing h1 {
+    font-size: 50px;
+  }
+
   .container {
     width: 100%;
     position: fixed;
