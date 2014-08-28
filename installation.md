@@ -24,7 +24,7 @@ Component support coming soon!
 
 ##Manually
 
-Get `build/impulse.js` or `build/impulse.min.js` from github.
+Get `impulse.js` or `impulse.min.js` from github.
 
 ```markup
 <script src="/scripts/impulse.js"></script>
