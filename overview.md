@@ -2,6 +2,13 @@
   Impulse is a library for building dynamic physics based interactions,
 with a focus on mobile web.
 
+Benefits
+--------
+
+  * Impulse is small, weighing in at about 9k minified and gziped.
+  * Impulse has no large dependencies, it doesn't require jquery,
+but it knows how to work with jquery.
+
 How is this different from jquery animate, velocity.js, etc?
 ---------------------------------------------------------
 
@@ -38,4 +45,13 @@ motion, CSS animations become very unweildy.
 delay (> 200ms) between when the animation is generated, and when the animation
 beings playing.
 
+The Future
+----------
 
+  Impulse is currently focused on creating natural feeling interactions.  The
+next steps are 
+
+  * Create a great API for dynamic animations that don't follow from a user's
+    interactions.
+  * Build a collection of polished and curated UI components built on top of
+    Impulse.
