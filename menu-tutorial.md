@@ -96,4 +96,8 @@ bottom, or spring to the top.
   When you're building something with Impulse, you'll want to play around with the
 numerical parameters (tension, damping, acceleration, etc) so that the interaction
 matches the unique feeling of your app.  This might take a bit of experimentation, but
-you'll get a really unique feeling for your interactions. 
+you'll get a really unique feeling for your interactions.
+
+  The last thing you may want to do is only bounce when the user moved, if they
+tapped, you should probably give the user a no frills, down to business
+animation.
