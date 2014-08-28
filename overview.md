@@ -6,7 +6,7 @@ Benefits
 --------
 
   * Impulse is small, weighing in at about 9k minified and gziped.
-  * Impulse has no large dependencies, it doesn't require jquery,
+  * Impulse has no large dependencies.  It doesn't require jquery,
 but it knows how to work with jquery.
 
 How is this different from jquery animate, velocity.js, etc?
