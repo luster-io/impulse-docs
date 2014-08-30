@@ -139,7 +139,7 @@ will record the final velocity.
 impulse.interact({})
 ```
 
-## impulse.drag()<a id="impulse-interact" class="anchor"></a>
+## impulse.drag()<a id="impulse-drag" class="anchor"></a>
 
 ####Options:
   * **boundry:** the boundry of where the object is allowed to be moved. (default: none)
