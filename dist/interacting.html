@@ -28,7 +28,7 @@ animate from the last position and velocity.</p>
 
   ball.drag()
     .on(&#39;end&#39;, function() {
-      ball.spring().to(x, y)
+      ball.spring().to(x, y).start()
     })</code></pre>
 <p>This will cause the ball to spring back to the center, but taking the user&#39;s velocity into
 account.</p>
