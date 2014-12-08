@@ -73,7 +73,7 @@ function end() {
   }
 
   if(isOpen) {
-    menu.accelerate({ acceleration: 1500, bounceAcceleration: 4000, bounce: true })
+    menu.accelerate({ acceleration: 1500, bounce: true })
       .to(0, boundry.bottom).start()
   } else {
     menu.spring({ tension: 100, damping: 15 })
@@ -98,6 +98,6 @@ numerical parameters (tension, damping, acceleration, etc) so that the interacti
 matches the unique feeling of your app.  This might take a bit of experimentation, but
 you'll get a really unique feeling for your interactions.
 
-  The last thing you may want to do is only bounce when the user moved, if they
-tapped, you should probably give the user a no frills, down to business
-animation.
+  The last thing you may want to do is only bounce when the user swiped the
+menu icon. If the user tapped, you should give her a no frills, down to
+business animation.
