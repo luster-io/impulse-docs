@@ -111,11 +111,14 @@ var animation = impulse.spring({ tension: 100, damping: 10 })
 ####Options:
   * **bounce:** (default: true)
   * **restitution:** amount to damp the velocity on each bounce
-  * **minBounceHeight:** 100 (default: 100)
-  * **acceleration:** How fast to accelerate(default: 1000)
+  * **minBounceHeight:** Minimum height for the object to bounce (default: 100)
+  * **acceleration:** How fast to accelerate. Object `{ x, y }` or `scalar` (default: 1000)
 
-  Accelerates from `from` position to `to` position at current `velocity`.
-Returns an `Animation`.
+  Accelerates from `from` position to `to` position starting at current `velocity`.
+Returns an `Animation`.  Acceleration can be a scalar, which will be transformed into
+a vector in the direction of `from` to `to` with a magnitute of `acceleration`.
+It can also be an object `{ x, y }`.  Note, if you use the object form, if the vector
+does not intersect with the `x` or `y` value in from, it will animate forever.
 
 ### phys.deccelerate(options)<a id="impulse-decelerate" class="anchor"></a>
 
